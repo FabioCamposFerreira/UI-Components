@@ -1,0 +1,126 @@
+/* Definição das 5 variáveis de cores para todo o site */
+:root {
+  --primary-color:    #007BFF; /* Ação principal – Azul */
+  --secondary-color:  #6C757D; /* Elementos secundários – Cinza */
+  --accent-color:     #DC3545; /* Ênfase e estados de erro – Vermelho */
+  --success-color:    #28A745; /* Indicador de sucesso – Verde */
+  --background-color: #FFFFFF; /* Fundo principal – Branco */
+}
+
+/* Estilos globais */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* Tela de Carregamento */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-color);
+  opacity: 0.9;
+  z-index: 1050;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Estilização das seções do conteúdo */
+section {
+  padding: 20px;
+  background: var(--background-color);
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Animação de hover para botões */
+.btn-custom {
+  transition: transform 0.3s ease;
+}
+.btn-custom:hover {
+  transform: scale(1.05);
+}
+
+/* Sobrescrevendo classes dos botões do Bootstrap para usar as variáveis */
+
+/* Botão Primário */
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* Botão Secundário */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:focus {
+  background-color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+}
+
+/* Botão de Sucesso */
+.btn-success,
+.btn-success:hover,
+.btn-success:active,
+.btn-success:focus {
+  background-color: var(--success-color) !important;
+  border-color: var(--success-color) !important;
+}
+
+/* Botão de Alerta/Ênfase – utilizado também para o spinner */
+.btn-warning,
+.btn-warning:hover,
+.btn-warning:active,
+.btn-warning:focus {
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+}
+
+/* Botão Outline Secundário */
+.btn-outline-secondary {
+  color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+}
+
+/* Personalização da Navbar para manter as cores compartilhadas */
+.navbar,
+.navbar-dark .navbar-nav .nav-link,
+.navbar-brand {
+  background-color: var(--secondary-color) !important;
+  color: var(--background-color) !important;
+}
+
+/* Personalização do Modal (cabeçalho) */
+.modal-header {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+/* Feedback de validação nos formulários */
+.was-validated .form-control:invalid,
+.form-control.is-invalid {
+  border-color: var(--accent-color);
+}
+
+.was-validated .form-control:valid,
+.form-control.is-valid {
+  border-color: var(--success-color);
+}
+
+/* Customização do cabeçalho da tabela */
+.table thead {
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+}
